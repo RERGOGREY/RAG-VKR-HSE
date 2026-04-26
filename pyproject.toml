@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hf-rag"
+version = "1.0.0"
+description = "RAG-система по документации HuggingFace"
+requires-python = ">=3.10"
+dependencies = [
+    # API
+    "fastapi>=0.111",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    # UI
+    "streamlit>=1.35",
+    # RAG
+    "sentence-transformers>=3.0",
+    "qdrant-client>=1.9",
+    "langchain-groq>=0.1",
+    "langchain-text-splitters>=0.2",
+    # Cache
+    "redis>=5.0",
+    # Utilities
+    "python-dotenv>=1.0",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+eval = [
+    "ragas>=0.1",
+    "langchain-huggingface>=0.0.3",
+    "datasets>=2.19",
+    "matplotlib>=3.8",
+    "pandas>=2.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hf_rag*"]

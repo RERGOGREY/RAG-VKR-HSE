@@ -205,3 +205,33 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ── Project-specific ignores ──────────────────────────────────────────────────
+# Virtual environments
+rag_env/
+
+# Secrets
+.env
+
+# Downloaded raw documentation (reproduced via data_pipeline/download.py)
+data_pipeline/raw/
+transformers/
+diffusers/
+datasets/
+
+# Generated corpus files (reproduced via data_pipeline/build_corpus.py)
+data_pipeline/corpus.jsonl
+rag_corpus/
+rag_corpus_cleaned/
+rag_corpus_cleaned_v2/
+rag_corpus_v3/
+
+# Large raw ground-truth file
+ground_truth_qwery.json
+
+# DeepEval cache
+.deepeval/
+.cache/
+
+# macOS
+.DS_Store
